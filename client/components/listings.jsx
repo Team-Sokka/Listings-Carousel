@@ -11,7 +11,7 @@ class Listings extends React.Component {
     return (
      <div>{this.props.listings.map((listing) =>
          <div><img src={listing.imageUrl}></img> </div>
-          //  <div>{listing.price}</div>
+          //  <div>{listing.price}</div> this is where I need to fix mapping to get all data related to each listing to render
         )}
     </div>
     )
