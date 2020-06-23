@@ -5,7 +5,7 @@ const path = require('path');
 const Listings = require('../database/ListingsNear.js')
 
 const app = express();
-const port = 3010;
+const port = 30010;
 
 app.use(morgan('dev'));
 app.use(express.json())
@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(express.static(path.resolve(__dirname + '/../client/dist')));
 
 app.get('/listings', (req, res) => {
-  Listings.find({})
+  Listings.find({}).limit(10)
   .then((data) => {
     res.send(data);
   })

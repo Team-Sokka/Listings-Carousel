@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react';
-import Listings from './listings.jsx';
+import ListingsView from './listingsView.jsx';
 import ReactDOM from 'react-dom';
 
 
@@ -15,14 +15,12 @@ class App extends React.Component {
   }
 
   componentDidMount(props) {
-    var dbData;
     axios.get('/listings')
     .then((response) => {
-      dbData = response.data;
       this.setState({
-        listings: dbData
+        listings: response.data
       })
-      console.log(this.state.listings[0].imageUrl);
+      // console.log(this.state.listings[0].imageUrl);
     })
   }
 
