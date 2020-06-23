@@ -231,8 +231,8 @@ var houses = () => {
   while (homes.length <= 99) {
     var house = {
       price: "$ " + addCommas(price()),
-      bedrooms: beds(),
-      bathrooms: baths(),
+      bedrooms: beds() + 'bd',
+      bathrooms: baths() + 'ba',
       sqft: addCommas(sqft()) + ' sqft',
     }
     homes.push(house);

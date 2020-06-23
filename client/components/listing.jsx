@@ -14,9 +14,6 @@ var Listing = (props) => (
 
 )
 
-
-
-
  export default Listing;
 
 

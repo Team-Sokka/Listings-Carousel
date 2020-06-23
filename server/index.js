@@ -5,7 +5,7 @@ const path = require('path');
 const Listings = require('../database/ListingsNear.js')
 
 const app = express();
-const port = 30010;
+const port = 3010;
 
 app.use(morgan('dev'));
 app.use(express.json())
