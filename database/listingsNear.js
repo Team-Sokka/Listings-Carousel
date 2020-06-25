@@ -5,8 +5,8 @@ mongoose.Promise = global.Promise;
 const listingsSchema = new mongoose.Schema({
   imageUrl: String,
   price: String,
-  bedrooms: Number,
-  bathrooms: Number,
+  bedrooms: String,
+  bathrooms: String,
   sqft: String,
   address: String,
   houseId: {type: Number, unique: true, min: 1}

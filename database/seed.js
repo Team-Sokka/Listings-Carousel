@@ -1,7 +1,7 @@
 const db  = require('./index.js');
 const Listings = require('./listingsNear.js');
 
-// subset of 25 addresses
+// subset of 100 addresses (25 unique)
 const addresses = [
   '3859 Owena St Honolulu, HI 96815',
   '3806 Diamond Head Rd Honolulu, HI 96816',
@@ -105,7 +105,7 @@ const addresses = [
   '2244 Kaululaau St Honolulu, HI 96813',
 ];
 
-// subset of 25 house images
+// subset of 100 house images (25 unique)
 const images = [
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+2.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+3.webp',
@@ -215,7 +215,7 @@ var baths = () => Math.floor(Math.random()* 4) + 1;
 var price = () => beds() * baths() * 100000 + (baths() * 10000);
 var sqft = () => beds() * 1000 + (beds() * 100) + (beds() * 10) + beds() * 2;
 
-// Format numbers with commas
+// Function for formatting numbers with commas
 var addCommas = (number) => {
   var split = number.toString().split('');
   for (var i = split.length -3; i > 0; i -= 3) {
@@ -226,14 +226,13 @@ var addCommas = (number) => {
 
 var counter = 0;
 
-
 var houses = () => {
   var homes = [];
   while (homes.length <= 99) {
     var house = {
       price: "$ " + addCommas(price()),
-      bedrooms: beds(),
-      bathrooms: baths(),
+      bedrooms: beds() + 'bd',
+      bathrooms: baths() + 'ba',
       sqft: addCommas(sqft()) + ' sqft',
     }
     homes.push(house);

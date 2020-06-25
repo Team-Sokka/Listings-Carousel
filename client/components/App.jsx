@@ -1,7 +1,28 @@
 import axios from 'axios';
 import React from 'react';
-import Listings from './listings.jsx';
+import ListingsView from './listingsView.jsx';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
+// import { View, Button, StyleSheet, TouchableOpacity, Text } from "react-native";
+
+
+const left = '<';
+const Button = styled.button`
+  background: transparent;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px solid palevioletred;
+  color: palevioletred;
+  margin: 0 1em;
+  padding: 10px;
+  text-align: center;
+`
+
+// const AppButton = (props) => (
+
+// )
+
 
 
 class App extends React.Component {
@@ -15,14 +36,13 @@ class App extends React.Component {
   }
 
   componentDidMount(props) {
-    var dbData;
     axios.get('/listings')
     .then((response) => {
-      dbData = response.data;
       this.setState({
-        listings: dbData
+        listings: response.data
       })
-      console.log(this.state.listings[0].imageUrl);
+      .catch(err => 'error')
+      // console.log(this.state.listings[0].imageUrl);
     })
   }
 
@@ -57,9 +77,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-         <h1>Listings</h1>
+         <h1>Homes for Sale Near 3859 Owena St</h1>
           <div>
-            <Listings listings={this.state.listings} name="currentListing" />
+            <Button>{'<'}</Button><br></br>
+            <ListingsView listings={this.state.listings} name="currentListing" /><br></br>
+            <Button>{'>'}</Button>
           </div>
       </div>
     );
@@ -67,3 +89,8 @@ class App extends React.Component {
 }
 
 export default App;
+export const add = (x, y) => x + y;
+
+export const total = (shipping, subTotal) => {
+  return '$' + add(shipping, subTotal);
+};
