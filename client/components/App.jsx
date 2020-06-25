@@ -41,6 +41,7 @@ class App extends React.Component {
       this.setState({
         listings: response.data
       })
+      .catch(err => 'error')
       // console.log(this.state.listings[0].imageUrl);
     })
   }
@@ -88,3 +89,8 @@ class App extends React.Component {
 }
 
 export default App;
+export const add = (x, y) => x + y;
+
+export const total = (shipping, subTotal) => {
+  return '$' + add(shipping, subTotal);
+};

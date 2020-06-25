@@ -5,8 +5,6 @@ import App from './App.jsx';
 import Listing from './listing.jsx';
 import styled from 'styled-components';
 
-const Button = styled.button``;
-
  class ListingsView extends React.Component {
    constructor(props){
      super(props);
@@ -14,7 +12,7 @@ const Button = styled.button``;
 
    render() {
      return (
-      <span>{this.props.listings.map((listing) =>
+      <span display="flex">{this.props.listings.map((listing) =>
         <Fragment>
           <img src={listing.imageUrl}></img>
           <h3>{listing.price}</h3>
