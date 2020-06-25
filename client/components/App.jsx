@@ -6,7 +6,7 @@ import styled from 'styled-components';
 // import { View, Button, StyleSheet, TouchableOpacity, Text } from "react-native";
 
 
-const left = '<';
+// const left = '<';
 const Button = styled.button`
   background: transparent;
   font-size: 1em;
@@ -30,9 +30,12 @@ class App extends React.Component {
     super();
     this.state = {
       listings: [],
+      counter: 0,
     }
     // this.handleChange = this.handleChange.bind(this);
     // this.handleSubmit = this.handleSubmit.bind(this);
+    this.increaseCounter = this.increaseCounter.bind(this);
+    this.descreaseCounter = this.decreaseCounter.bind(this);
   }
 
   componentDidMount(props) {
@@ -44,6 +47,20 @@ class App extends React.Component {
       .catch(err => 'error')
       // console.log(this.state.listings[0].imageUrl);
     })
+  }
+
+  increaseCounter() {
+    this.setState({
+      counter: this.state.counter + 1
+    })
+    console.log(this.state.counter);
+  }
+
+  decreaseCounter() {
+    this.setState({
+      counter: this.state.counter - 1
+    })
+    console.log(this.state.counter);
   }
 
 // handleChange (event) {
@@ -79,9 +96,9 @@ class App extends React.Component {
       <div>
          <h1>Homes for Sale Near 3859 Owena St</h1>
           <div>
-            <Button>{'<'}</Button><br></br>
+            <button onClick={() => {this.decreaseCounter()}}>{'<'}</button><br></br>
             <ListingsView listings={this.state.listings} name="currentListing" /><br></br>
-            <Button>{'>'}</Button>
+            <button onClick={() => {this.increaseCounter()}}>{'>'}</button>
           </div>
       </div>
     );

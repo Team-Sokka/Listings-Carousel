@@ -256,3 +256,4 @@ Promise.all(seeds)
     console.log('Database Seeded')
   })});
 
+  module.exports.listings = listings;

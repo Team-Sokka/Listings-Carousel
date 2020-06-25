@@ -2,10 +2,10 @@ const app = require('../server/index.js');
 const supertest = require('supertest');
 const request = supertest(app);
 
-it('Retrieves the endpoint', async done => {
+it('Retrieves the endpoint', async () => {
   const response = await request.get('/listings')
 
   expect(response.status).toBe(200)
   expect(response.body.data).toBeTruthy()
-  .done()
+  // .done()
 });
