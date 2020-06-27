@@ -30,12 +30,12 @@ class App extends React.Component {
     super();
     this.state = {
       listings: [],
-      counter: 0,
+      // counter: 0,
     }
     // this.handleChange = this.handleChange.bind(this);
     // this.handleSubmit = this.handleSubmit.bind(this);
-    this.increaseCounter = this.increaseCounter.bind(this);
-    this.descreaseCounter = this.decreaseCounter.bind(this);
+    // this.increaseCounter = this.increaseCounter.bind(this);
+    // this.descreaseCounter = this.decreaseCounter.bind(this);
   }
 
   componentDidMount(props) {
@@ -44,24 +44,24 @@ class App extends React.Component {
       this.setState({
         listings: response.data
       })
-      .catch(err => 'error')
+      // .catch(err => 'error')
       // console.log(this.state.listings[0].imageUrl);
     })
   }
 
-  increaseCounter() {
-    this.setState({
-      counter: this.state.counter + 1
-    })
-    console.log(this.state.counter);
-  }
+  // increaseCounter() {
+  //   this.setState({
+  //     counter: this.state.counter + 100
+  //   })
+  //   console.log(this.state.counter);
+  // }
 
-  decreaseCounter() {
-    this.setState({
-      counter: this.state.counter - 1
-    })
-    console.log(this.state.counter);
-  }
+  // decreaseCounter() {
+  //   this.setState({
+  //     counter: this.state.counter - 100
+  //   })
+  //   console.log(this.state.counter);
+  // }
 
 // handleChange (event) {
 //   const target = event.target;
@@ -96,9 +96,9 @@ class App extends React.Component {
       <div>
          <h1>Homes for Sale Near 3859 Owena St</h1>
           <div>
-            <button onClick={() => {this.decreaseCounter()}}>{'<'}</button><br></br>
-            <ListingsView listings={this.state.listings} name="currentListing" /><br></br>
-            <button onClick={() => {this.increaseCounter()}}>{'>'}</button>
+            {/* <button onClick={() => {this.decreaseCounter()}}>{'<'}</button><br></br> */}
+            <ListingsView counter={this.state.counter} listings={this.state.listings} name="currentListing" /><br></br>
+            {/* <button onClick={() => {this.increaseCounter()}}>{'>'}</button> */}
           </div>
       </div>
     );

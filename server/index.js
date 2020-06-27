@@ -17,7 +17,7 @@ app.get('/listings', (req, res) => {
   .then((data) => {
     res.send(data);
   })
-  .catch(console.log);
+  .catch(err => 'error');
 });
 
 
