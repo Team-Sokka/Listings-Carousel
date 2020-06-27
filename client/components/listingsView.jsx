@@ -5,55 +5,36 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft, faChevronCircleRight, faBed, faBath, faRulerCombined, faHeart } from '@fortawesome/free-solid-svg-icons';
 
-
 // Styled Components
 
-const Wrapper = styled.div`
+// const Wrapper = styled.div`
+//   justify-content: center;
+// `;
 
-
+const StyledIcon = styled(FontAwesomeIcon)`
+  color: grey;
 `;
 
 const Main = styled.div`
-// transition: 'width '
-width: 100%;
-marginRight: 150px;
-marginLeft: 80px;
-display: flex;
-alignItems: center;
-// justifyContent: space-between;
-// width: 100%;
-// height: 100px;
-objectFit: cover;
-// &:hover ${ListingContainer} {
-//   width: '25%';
-// }
-// width: 25%
-// overflow: 'hidden'
+  display: flex;
+  overflow: hidden;
 `;
 
-
 const ListingContainer = styled.div`
-// border: 3px solid black;
-// marginTop: 100px;
-// marginBottom: 100px;
 padding-left: 50x;
 padding-right: 50px;
-// display: flex;
-alignItems: center;
-justifyContent: center;
-// width:100%;
-// height: 100px;
-// objectFit: cover;
 transition: transform 0.5s ease-in-out;
 transform: translateX(${props => props.counter + 'px'});
 `;
 
 const ImageContainer = styled.div`
+  object-fit: cover;
   border-radius: 10px;
   overflow: hidden;
 `;
 
 const Image = styled.img`
+  object-fit: cover;
   border-radius: 10px;
   overflow: hidden;
   -webkit-transition:  .5s ease;
@@ -65,59 +46,45 @@ const Image = styled.img`
 `;
 
 const Price = styled.div`
-font-weight: bold;
-font-size: 25px;
-margin-top: 10px;
-vertical-align: top;
-// margin-top: 100px;
-// margin-bottom: 100px;
-margin-right: 25px;
-margin-left: 25px;
-display: flex;
-alignItems: center;
+  color: #404040;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-right: 25px;
+  display: flex;
+  alignItems: center;
 `;
 
 const Text = styled.div`
-  vertical-align: top;
-  color: blue;
+  font-size: 22px;
+  color: #303030;
 `;
 
 const SpecsStyle = styled.div`
-  margin-top: 10px;
-  vertical-align: top;
-  // margin-top: 100px;
-  // margin-bottom: 100px;
   margin-right: 25px;
-  margin-left: 25px;
+  margin-top: 7px;
   display: flex;
-  alignItems: center;
+  align-items: center;
   justify-content: space-between;
-  // width:100%;
-  // height: 100px;
-  object-fit: cover;
-  // width: 25%;
-  // overflow: hidden
 `;
 
 const PrevBtn = styled.div`
-  background- color: white;
   display: ${props => props.counter === 0? 'none' : ''};
   position: absolute;
   top: 25%;
   z-index: 10;
-  left: 0%;
+  left: 7.4%;
   font-size: 30px;
   color: white;
   cursor: pointer;
 `;
 
 const NextBtn = styled.div`
-  color: grey;
   display: ${props => props.counter === -3072? 'none' : ''};
   position: absolute;
   top: 25%;
   z-index: 10;
-  right: 0%;
+  right: 7.4%;
   font-size: 30px;
   color: white;
   cursor: pointer;
@@ -146,15 +113,13 @@ class ListingsView extends React.Component {
     this.descreaseCounter = this.decreaseCounter.bind(this);
   }
 
-
   increaseCounter() {
     if (this.state.counter >= 0) {
       return;
     }
     this.setState({
-      counter: this.state.counter + 1024
+      counter: this.state.counter + 1024,
     })
-    console.log(this.state.counter);
   }
 
   decreaseCounter() {
@@ -162,15 +127,14 @@ class ListingsView extends React.Component {
       return;
     }
     this.setState({
-      counter: this.state.counter - 1024
+      counter: this.state.counter - 1024,
     })
-    console.log(this.state.counter);
   }
 
    render() {
      return (
         <div>
-        <Wrapper>
+        {/* <Wrapper> */}
           <PrevBtn counter={this.state.counter}>
             <FontAwesomeIcon onClick={() => {this.increaseCounter()}} icon={faChevronCircleLeft}></FontAwesomeIcon>
           </PrevBtn>
@@ -182,21 +146,18 @@ class ListingsView extends React.Component {
                 </ImageContainer>
                   <Price>{listing.price}</Price>
                 <SpecsStyle>
-                  <FontAwesomeIcon icon={faBed}/>
-                <Text>
-                  <h3>{listing.bedrooms}</h3>
-                </Text>
-                  <FontAwesomeIcon icon={faBath}/>
-                  <h3>{listing.bathrooms}</h3>
-                  <FontAwesomeIcon icon={faRulerCombined}/>
-                  <h3>{listing.sqft}</h3>
+                  <StyledIcon icon={faBed}/>
+                  <Text>{listing.bedrooms}</Text>
+                  <StyledIcon icon={faBath}/>
+                  <Text>{listing.bathrooms}</Text>
+                  <StyledIcon icon={faRulerCombined}/>
+                  <Text>{listing.sqft}</Text>
                   <Heart>
                     <FontAwesomeIcon icon={faHeart}/>
                   </Heart>
                 </SpecsStyle>
-                <div>
-                  <SpecsStyle>{listing.address}</SpecsStyle>
-                </div>
+                <SpecsStyle><Text>{listing.address}</Text></SpecsStyle>
+                <SpecsStyle><Text>{'Waialae-Kahala, Honolulu, HI'}</Text></SpecsStyle>
               </ListingContainer>
             </Fragment>
               )}
@@ -204,7 +165,7 @@ class ListingsView extends React.Component {
           <NextBtn counter={this.state.counter}>
             <FontAwesomeIcon onClick={() => {this.descreaseCounter()}} icon={faChevronCircleRight}></FontAwesomeIcon>
           </NextBtn>
-        </Wrapper>
+        {/* </Wrapper> */}
         </div>
      )
    }

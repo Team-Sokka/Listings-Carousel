@@ -3,26 +3,18 @@ import React from 'react';
 import ListingsView from './listingsView.jsx';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-// import { View, Button, StyleSheet, TouchableOpacity, Text } from "react-native";
 
+const MainWrapper = styled.div`
+  // position: fixed;
+  top: 20%;
+  margin-right: 7%;
+  padding-left: 7%;
+`;
 
-// const left = '<';
-const Button = styled.button`
-  background: transparent;
-  font-size: 1em;
+const Title = styled.div`
+  color: #404040;
   font-weight: bold;
-  border-radius: 50%;
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  margin: 0 1em;
-  padding: 10px;
-  text-align: center;
-`
-
-// const AppButton = (props) => (
-
-// )
-
+`;
 
 
 class App extends React.Component {
@@ -30,12 +22,7 @@ class App extends React.Component {
     super();
     this.state = {
       listings: [],
-      // counter: 0,
     }
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.increaseCounter = this.increaseCounter.bind(this);
-    // this.descreaseCounter = this.decreaseCounter.bind(this);
   }
 
   componentDidMount(props) {
@@ -44,70 +31,29 @@ class App extends React.Component {
       this.setState({
         listings: response.data
       })
-      // .catch(err => 'error')
-      // console.log(this.state.listings[0].imageUrl);
     })
   }
-
-  // increaseCounter() {
-  //   this.setState({
-  //     counter: this.state.counter + 100
-  //   })
-  //   console.log(this.state.counter);
-  // }
-
-  // decreaseCounter() {
-  //   this.setState({
-  //     counter: this.state.counter - 100
-  //   })
-  //   console.log(this.state.counter);
-  // }
-
-// handleChange (event) {
-//   const target = event.target;
-//   const value = target.value;
-//   const name = target.name;
-
-//   this.setState({
-//     [name]: value,
-//   });
-// }
-
-// handleSubmit (event){
-//   event.preventDefault();
-//   axios.post('/listings', {
-//   })
-//   .then(() => {
-//     window.location.reload();
-//   })
-// }
-  showListings (event) {
-    const target = event.target;
-    const id = target.id;
-    const className = target.class;
-
-  // this.setState({
-
-  // })
-}
 
   render() {
     return (
       <div>
-         <h1>Homes for Sale Near 3859 Owena St</h1>
+        <MainWrapper>
+          <Title>
+          <h1>Homes for Sale Near 3859 Owena St</h1>
+          </Title>
           <div>
-            {/* <button onClick={() => {this.decreaseCounter()}}>{'<'}</button><br></br> */}
-            <ListingsView counter={this.state.counter} listings={this.state.listings} name="currentListing" /><br></br>
-            {/* <button onClick={() => {this.increaseCounter()}}>{'>'}</button> */}
+            <ListingsView listings={this.state.listings} />
           </div>
+        </MainWrapper>
       </div>
     );
   }
 }
 
 export default App;
-export const add = (x, y) => x + y;
 
-export const total = (shipping, subTotal) => {
-  return '$' + add(shipping, subTotal);
-};
+// export const add = (x, y) => x + y;
+
+// export const total = (shipping, subTotal) => {
+//   return '$' + add(shipping, subTotal);
+// };
