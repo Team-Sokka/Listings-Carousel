@@ -7,14 +7,6 @@ import { faChevronCircleLeft, faChevronCircleRight, faBed, faBath, faRulerCombin
 
 // Styled Components
 
-// const Wrapper = styled.div`
-//   justify-content: center;
-// `;
-
-const StyledIcon = styled(FontAwesomeIcon)`
-  color: grey;
-`;
-
 const Main = styled.div`
   display: flex;
   overflow: hidden;
@@ -66,6 +58,10 @@ const SpecsStyle = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+
+const StyledIcon = styled(FontAwesomeIcon)`
+  color: grey;
 `;
 
 const PrevBtn = styled.div`
@@ -134,7 +130,6 @@ class ListingsView extends React.Component {
    render() {
      return (
         <div>
-        {/* <Wrapper> */}
           <PrevBtn counter={this.state.counter}>
             <FontAwesomeIcon onClick={() => {this.increaseCounter()}} icon={faChevronCircleLeft}></FontAwesomeIcon>
           </PrevBtn>
@@ -165,7 +160,6 @@ class ListingsView extends React.Component {
           <NextBtn counter={this.state.counter}>
             <FontAwesomeIcon onClick={() => {this.descreaseCounter()}} icon={faChevronCircleRight}></FontAwesomeIcon>
           </NextBtn>
-        {/* </Wrapper> */}
         </div>
      )
    }
