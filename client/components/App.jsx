@@ -7,7 +7,7 @@ const MainWrapper = styled.div`
   // position: fixed;
   top: 20%;
   margin-right: 7%;
-  padding-left: 7%;
+  margin-left: 7%;
 `;
 
 const Title = styled.div`

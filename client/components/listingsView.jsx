@@ -52,7 +52,7 @@ const Price = styled.div`
   margin-top: 10px;
   margin-right: 25px;
   display: flex;
-  alignItems: center;
+  align-items: center;
 `;
 
 const Text = styled.div`
