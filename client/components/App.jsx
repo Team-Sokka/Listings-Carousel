@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 import ListingsView from './listingsView.jsx';
-import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
 const MainWrapper = styled.div`
