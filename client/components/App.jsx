@@ -52,8 +52,3 @@ class App extends React.Component {
 
 export default App;
 
-// export const add = (x, y) => x + y;
-
-// export const total = (shipping, subTotal) => {
-//   return '$' + add(shipping, subTotal);
-// };
