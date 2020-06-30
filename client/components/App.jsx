@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
+// import ReactDOM from 'react-dom';
 import ListingsView from './listingsView.jsx';
-import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
 const MainWrapper = styled.div`
@@ -26,7 +26,7 @@ class App extends React.Component {
   }
 
   componentDidMount(props) {
-    axios.get('/listings')
+    axios.get('http://localhost:8003/listings')
     .then((response) => {
       this.setState({
         listings: response.data
@@ -49,6 +49,8 @@ class App extends React.Component {
     );
   }
 }
+
+// ReactDOM.render(<App />, document.getElementById('listingsNear'));
 
 export default App;
 
