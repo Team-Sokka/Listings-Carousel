@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+var cors = require('cors');
 const db = require('../database/index.js');
 const path = require('path');
 const Listings = require('../database/ListingsNear.js')
@@ -9,7 +10,7 @@ const port = 8003;
 
 app.use(morgan('dev'));
 app.use(express.json())
-// app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 app.use(express.static(path.resolve(__dirname + '/../client/dist')));
 
 app.get('/listings', (req, res) => {
