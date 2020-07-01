@@ -8,8 +8,6 @@ import { faChevronCircleLeft, faChevronCircleRight, faBed, faBath, faRulerCombin
 // Styled Components
 
 const Wrapper = styled.div`
-  // overflow: auto;
-  // border: black solid;
   display: flex;
   postition: relative;
 `;
@@ -23,8 +21,8 @@ const ListingContainer = styled.div`
   // position: relative;
   max-width: 305px;
   // margin: auto;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
   transition: transform 0.5s ease-in-out;
   transform: translateX(${props => props.counter + 'px'});
 `;
@@ -77,13 +75,13 @@ const StyledIcon = styled(FontAwesomeIcon)`
 `;
 
 const PrevBtn = styled.div`
-  // overflow: auto;
+  align-self: flex-end;
   stroke: grey;
   stroke-width: 3;
   display: ${props => props.counter === 0? 'none' : ''};
-  position: absolute;
-  bottom: 475px;
-  left: 32px;
+  position: relative;
+  bottom: 160px;
+  left: 20px;
   z-index: 10;
   font-size: 30px;
   color: white;
@@ -91,13 +89,13 @@ const PrevBtn = styled.div`
 `;
 
 const NextBtn = styled.div`
-  // overflow: auto;
+  align-self: flex-end;
   stroke: grey;
   stroke-width: 3;
   display: ${props => props.counter === -2620? 'none' : ''};
-  position: absolute;
-  bottom: 475px;
-  right: 32px;
+  position: relative;
+  bottom: 160px;
+  right: 25px;
   z-index: 10;
   font-size: 30px;
   color: white;
