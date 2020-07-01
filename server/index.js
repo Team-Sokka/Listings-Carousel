@@ -10,11 +10,16 @@ const port = 8003;
 
 app.use(morgan('dev'));
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static(path.resolve(__dirname + '/../client/dist')));
 
-app.get('/listings', (req, res) => {
-  Listings.find({}).limit(10)
+app.get('/listings/:id', (req, res) => {
+  console.log(req.params);
+  Listings.find({houseId: req.params.id})
+  .then((data) => {
+    return Listings.find({zipcode: data[0].zipcode})
+  })
   .then((data) => {
     res.send(data);
   })
