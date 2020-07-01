@@ -14,15 +14,14 @@ class App extends React.Component {
 
   componentDidMount(props) {
     var urlParams = new URLSearchParams(window.location.search);
-    console.log(window.location.search);
     var myId = urlParams.get('id');
     axios.get(`http://127.0.0.1:8003/listings/${myId}`)
     .then((response) => {
-      // console.log('Hey!');
       this.setState({
         listings: response.data
       })
     })
+    .catch(err => 'error');
   }
 
   render() {
