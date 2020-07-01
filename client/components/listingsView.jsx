@@ -18,9 +18,7 @@ const Main = styled.div`
 `;
 
 const ListingContainer = styled.div`
-  // position: relative;
   max-width: 305px;
-  // margin: auto;
   padding-left: 10px;
   padding-right: 10px;
   transition: transform 0.5s ease-in-out;
@@ -28,7 +26,6 @@ const ListingContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  // position: relative;
   object-fit: cover;
   border-radius: 10px;
   overflow: hidden;
@@ -62,7 +59,6 @@ const Text = styled.div`
 `;
 
 const SpecsStyle = styled.div`
-  // position: relative;
   margin-right: 25px;
   margin-top: 7px;
   display: flex;

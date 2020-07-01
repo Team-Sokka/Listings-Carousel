@@ -4,13 +4,6 @@ import React from 'react';
 import ListingsView from './listingsView.jsx';
 import styled from 'styled-components';
 
-const MainWrapper = styled.div`
-  // position: fixed;
-  // top: 20%;
-  // margin-right: 7%;
-  // margin-left: 7%;
-`;
-
 class App extends React.Component {
   constructor(){
     super();
