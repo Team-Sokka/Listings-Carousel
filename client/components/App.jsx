@@ -7,11 +7,12 @@ import styled from 'styled-components';
 const MainWrapper = styled.div`
   // position: fixed;
   top: 20%;
-  margin-right: 7%;
-  margin-left: 7%;
+  // margin-right: 7%;
+  // margin-left: 7%;
 `;
 
 const Title = styled.div`
+  margin-left: 1%;
   color: #404040;
   font-weight: bold;
 `;
@@ -26,8 +27,12 @@ class App extends React.Component {
   }
 
   componentDidMount(props) {
-    axios.get('http://localhost:8003/listings')
+    var urlParams = new URLSearchParams(window.location.search);
+    console.log(window.location.search);
+    var myId = urlParams.get('id');
+    axios.get(`http://127.0.0.1:8003/listings/${myId}`)
     .then((response) => {
+      // console.log('Hey!');
       this.setState({
         listings: response.data
       })

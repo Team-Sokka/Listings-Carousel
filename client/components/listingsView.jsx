@@ -7,19 +7,30 @@ import { faChevronCircleLeft, faChevronCircleRight, faBed, faBath, faRulerCombin
 
 // Styled Components
 
+const Wrapper = styled.div`
+  // overflow: auto;
+  // border: black solid;
+  display: flex;
+  postition: relative;
+`;
+
 const Main = styled.div`
   display: flex;
   overflow: hidden;
 `;
 
 const ListingContainer = styled.div`
-padding-left: 50x;
-padding-right: 50px;
-transition: transform 0.5s ease-in-out;
-transform: translateX(${props => props.counter + 'px'});
+  // position: relative;
+  max-width: 305px;
+  // margin: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(${props => props.counter + 'px'});
 `;
 
 const ImageContainer = styled.div`
+  // position: relative;
   object-fit: cover;
   border-radius: 10px;
   overflow: hidden;
@@ -53,6 +64,7 @@ const Text = styled.div`
 `;
 
 const SpecsStyle = styled.div`
+  // position: relative;
   margin-right: 25px;
   margin-top: 7px;
   display: flex;
@@ -65,22 +77,28 @@ const StyledIcon = styled(FontAwesomeIcon)`
 `;
 
 const PrevBtn = styled.div`
+  // overflow: auto;
+  stroke: grey;
+  stroke-width: 3;
   display: ${props => props.counter === 0? 'none' : ''};
   position: absolute;
-  top: 25%;
+  bottom: 475px;
+  left: 32px;
   z-index: 10;
-  left: 7.4%;
   font-size: 30px;
   color: white;
   cursor: pointer;
 `;
 
 const NextBtn = styled.div`
-  display: ${props => props.counter === -3072? 'none' : ''};
+  // overflow: auto;
+  stroke: grey;
+  stroke-width: 3;
+  display: ${props => props.counter === -2620? 'none' : ''};
   position: absolute;
-  top: 25%;
+  bottom: 475px;
+  right: 32px;
   z-index: 10;
-  right: 7.4%;
   font-size: 30px;
   color: white;
   cursor: pointer;
@@ -92,9 +110,9 @@ const Heart = styled.div`
   opacity: .7;
   color: #565656;
   position: absolute;
-  top: 4%;
+  top: 3%;
+  right: 8%;
   z-index: 10;
-  right: 18%;
   font-size: 30px;
   cursor: pointer;
 `;
@@ -114,52 +132,54 @@ class ListingsView extends React.Component {
       return;
     }
     this.setState({
-      counter: this.state.counter + 1024,
+      counter: this.state.counter + 1310,
     })
   }
 
   decreaseCounter() {
-    if (this.state.counter <= -3072) {
+    if (this.state.counter <= -2072) {
       return;
     }
     this.setState({
-      counter: this.state.counter - 1024,
+      counter: this.state.counter - 1310,
     })
   }
 
    render() {
      return (
         <div>
-          <PrevBtn counter={this.state.counter}>
-            <FontAwesomeIcon onClick={() => {this.increaseCounter()}} icon={faChevronCircleLeft}></FontAwesomeIcon>
-          </PrevBtn>
-          <Main className="mainContainer">{this.props.listings.map((listing) =>
-            <Fragment>
-              <ListingContainer counter={this.state.counter}>
-                <ImageContainer>
-                  <Image src={listing.imageUrl}></Image>
-                </ImageContainer>
-                  <Price>{listing.price}</Price>
-                <SpecsStyle>
-                  <StyledIcon icon={faBed}/>
-                  <Text>{listing.bedrooms}</Text>
-                  <StyledIcon icon={faBath}/>
-                  <Text>{listing.bathrooms}</Text>
-                  <StyledIcon icon={faRulerCombined}/>
-                  <Text>{listing.sqft}</Text>
-                  <Heart>
-                    <FontAwesomeIcon icon={faHeart}/>
-                  </Heart>
-                </SpecsStyle>
-                <SpecsStyle><Text>{listing.address}</Text></SpecsStyle>
-                <SpecsStyle><Text>{'Waialae-Kahala, Honolulu, HI'}</Text></SpecsStyle>
-              </ListingContainer>
-            </Fragment>
-              )}
-          </Main>
-          <NextBtn counter={this.state.counter}>
-            <FontAwesomeIcon onClick={() => {this.descreaseCounter()}} icon={faChevronCircleRight}></FontAwesomeIcon>
-          </NextBtn>
+          <Wrapper>
+            <PrevBtn counter={this.state.counter}>
+              <FontAwesomeIcon onClick={() => {this.increaseCounter()}} icon={faChevronCircleLeft}></FontAwesomeIcon>
+            </PrevBtn>
+            <Main className="mainContainer">{this.props.listings.map((listing) =>
+              <Fragment>
+                <ListingContainer counter={this.state.counter}>
+                  <ImageContainer>
+                    <Image src={listing.imageUrl}></Image>
+                  </ImageContainer>
+                    <Price>{listing.price}</Price>
+                  <SpecsStyle>
+                    <StyledIcon icon={faBed}/>
+                    <Text>{listing.bedrooms}</Text>
+                    <StyledIcon icon={faBath}/>
+                    <Text>{listing.bathrooms}</Text>
+                    <StyledIcon icon={faRulerCombined}/>
+                    <Text>{listing.sqft}</Text>
+                    <Heart>
+                      <FontAwesomeIcon icon={faHeart}/>
+                    </Heart>
+                  </SpecsStyle>
+                  <SpecsStyle><Text>{listing.address}</Text></SpecsStyle>
+                  <SpecsStyle><Text>{'Waialae-Kahala, Honolulu, HI'}</Text></SpecsStyle>
+                </ListingContainer>
+              </Fragment>
+                )}
+            </Main>
+            <NextBtn counter={this.state.counter}>
+              <FontAwesomeIcon onClick={() => {this.descreaseCounter()}} icon={faChevronCircleRight}></FontAwesomeIcon>
+            </NextBtn>
+          </Wrapper>
         </div>
      )
    }

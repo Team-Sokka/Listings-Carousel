@@ -102,7 +102,30 @@ const addresses = [
   '3940 Sierra Dr',
   '1380 Saint Louis Dr',
   '3928 Pili Pl',
-  '2244 Kaululaau St'
+  '2244 Kaululaau St',
+  '3748 Kepa St',
+  '7018 Hawaii Kai Dr',
+  '610 Kuliouou Rd',
+  '27 Niuhi St',
+  '1623 Hoaaina Pl',
+  '3940 Sierra Dr',
+  '1380 Saint Louis Dr',
+  '3928 Pili Pl',
+  '2244 Kaululaau St',
+  '3748 Kepa St'
+];
+
+const zipcodes = [
+  96795,
+  96804,
+  96808,
+  96812,
+  96816,
+  96820,
+  96801,
+  96811,
+  96823,
+  96803
 ];
 
 // subset of 100 house images (23 unique)
@@ -112,17 +135,17 @@ const images = [
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+4.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+5.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+6.webp',
-  // 'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+7.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+18.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+8.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+9.webp',
-  // 'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+10.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+19.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+11.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+12.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+13.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+14.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+15.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+16.webp',
-  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+17.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+2.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+18.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+19.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+20.webp',
@@ -130,24 +153,24 @@ const images = [
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+22.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+23.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+24.webp',
-  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/house+25.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+5.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+26.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+2.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+3.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+4.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+5.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+6.webp',
-  // 'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+7.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+21.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+8.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+9.webp',
-  // 'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+10.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+22.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+11.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+12.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+13.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+14.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+15.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+16.webp',
-  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+17.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+2.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+18.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+19.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+20.webp',
@@ -155,24 +178,24 @@ const images = [
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+22.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+23.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+24.webp',
-  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/house+25.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+5.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+26.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+2.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+3.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+4.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+5.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+6.webp',
-  // 'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+7.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+23.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+8.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+9.webp',
-  // 'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+10.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+24.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+11.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+12.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+13.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+14.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+15.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+16.webp',
-  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+17.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+2.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+18.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+19.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+20.webp',
@@ -180,24 +203,24 @@ const images = [
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+22.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+23.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+24.webp',
-  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/house+25.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+5.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+26.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+2.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+3.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+4.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+5.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+6.webp',
-  // 'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+7.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+20.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+8.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+9.webp',
-  // 'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+10.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+26.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+11.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+12.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+13.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+14.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+15.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+16.webp',
-  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+17.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+2.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+18.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+19.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+20.webp',
@@ -205,8 +228,19 @@ const images = [
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+22.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+23.webp',
   'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+24.webp',
-  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/house+25.webp',
-  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+26.webp'
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+5.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+26.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+6.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+19.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+20.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+21.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+22.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+23.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+24.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+5.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+26.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+6.webp',
+  'https://bootcamptonyp.s3-us-west-2.amazonaws.com/FEC+photos/House+9.webp',
 ];
 
 
@@ -227,9 +261,19 @@ var addCommas = (number) => {
 
 var counter = 0;
 
+// Attaches a new zipcode every 10 listings in db
+var zipcodeCounter = function() {
+  var internalCount = 0;
+  var zipCount = counter;
+  if (zipCount > 9) {
+    internalCount = Math.floor(zipCount / 10);
+  }
+  return internalCount;
+}
+
 var houses = () => {
   var homes = [];
-  while (homes.length <= 99) {
+  while (homes.length <= 109) {
     var house = {
       price: "$ " + addCommas(price()),
       bedrooms: beds() + 'bd',
@@ -246,6 +290,7 @@ var seeds = listings.map((listing) => {
   counter++;
   listing.imageUrl = images[counter];
   listing.address = addresses[counter];
+  listing.zipcode = zipcodes[zipcodeCounter()];
   listing.houseId = counter;
 
   return new Listings(listing).save();

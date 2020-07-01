@@ -6,7 +6,7 @@
     "start": "nodemon ./server/index.js",
     "test": "jest --watchAll",
     "build": "webpack -d --watch",
-    "setup": "node database/seed.js"
+    "seed": "node database/seed.js"
   },
   "repository": {
     "type": "git",

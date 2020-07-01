@@ -9,6 +9,7 @@ const listingsSchema = new mongoose.Schema({
   bathrooms: String,
   sqft: String,
   address: String,
+  zipcode: Number,
   houseId: {type: Number, unique: true, min: 1}
 });
 
