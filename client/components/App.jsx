@@ -21,7 +21,7 @@ class App extends React.Component {
         listings: response.data
       })
     })
-    .catch(err => 'error');
+    .catch(err => console.log('error: ' + err));
   }
 
   render() {

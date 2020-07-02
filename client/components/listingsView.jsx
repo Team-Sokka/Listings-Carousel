@@ -74,12 +74,12 @@ const StyledIcon = styled(FontAwesomeIcon)`
 `;
 
 const PrevBtn = styled.div`
-  align-self: flex-end;
+  align-self: center;
   stroke: grey;
   stroke-width: 3;
   display: ${props => props.counter === 0? 'none' : ''};
   position: relative;
-  bottom: 180px;
+  // bottom: 180px;
   left: 17px;
   z-index: 10;
   font-size: 30px;
@@ -88,12 +88,12 @@ const PrevBtn = styled.div`
 `;
 
 const NextBtn = styled.div`
-  align-self: flex-end;
+  align-self: center;
   stroke: grey;
   stroke-width: 3;
   display: ${props => props.counter === -2500? 'none' : ''};
   position: relative;
-  bottom: 180px;
+  // bottom: 180px;
   right: 25px;
   z-index: 10;
   font-size: 30px;
