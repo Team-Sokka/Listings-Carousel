@@ -8,11 +8,14 @@ import { faChevronCircleLeft, faChevronCircleRight, faBed, faBath, faRulerCombin
 // Styled Components
 
 const Wrapper = styled.div`
+  margin-left: 3.5%;
+  margin-right: 3.5%;
   display: flex;
   postition: relative;
 `;
 
 const Main = styled.div`
+
   display: flex;
   overflow: hidden;
 `;
@@ -54,7 +57,7 @@ const Price = styled.div`
 `;
 
 const Text = styled.div`
-  font-size: 22px;
+  font-size: 20px;
   color: #303030;
 `;
 
@@ -76,11 +79,11 @@ const PrevBtn = styled.div`
   stroke-width: 3;
   display: ${props => props.counter === 0? 'none' : ''};
   position: relative;
-  bottom: 160px;
-  left: 20px;
+  bottom: 180px;
+  left: 17px;
   z-index: 10;
   font-size: 30px;
-  color: white;
+  color: rgb(230,230,230);
   cursor: pointer;
 `;
 
@@ -88,13 +91,13 @@ const NextBtn = styled.div`
   align-self: flex-end;
   stroke: grey;
   stroke-width: 3;
-  display: ${props => props.counter === -2620? 'none' : ''};
+  display: ${props => props.counter === -2500? 'none' : ''};
   position: relative;
-  bottom: 160px;
+  bottom: 180px;
   right: 25px;
   z-index: 10;
   font-size: 30px;
-  color: white;
+  color: rgb(230,230,230);
   cursor: pointer;
 `;
 
@@ -126,16 +129,16 @@ class ListingsView extends React.Component {
       return;
     }
     this.setState({
-      counter: this.state.counter + 1310,
+      counter: this.state.counter + 1250,
     })
   }
 
   decreaseCounter() {
-    if (this.state.counter <= -2072) {
+    if (this.state.counter <= -2400) {
       return;
     }
     this.setState({
-      counter: this.state.counter - 1310,
+      counter: this.state.counter - 1250,
     })
   }
 
